@@ -173,3 +173,9 @@ img {
   padding: 10px;
   border: 1px solid black;
 }
+
+.flash-msg {
+  background-color: lightgreen;
+  font-size: 20px;
+  text-align: center;
+}
