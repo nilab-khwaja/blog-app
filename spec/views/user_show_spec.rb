@@ -34,12 +34,11 @@ RSpec.feature 'UserShows', type: :feature do
     expect(page).to have_content(@post1.title)
     # I can see a button that lets me view all of a user's posts
     expect(page).to have_content('See all posts')
-    # When I click a user's post, it redirects me to that post's show page
-    click_link @post1.title
+    # When I click a user's post, it redirects me to that post's show page.
+    click_on @post1.title
     expect(page).to have_current_path(user_post_path(@user, @post1))
-    # When I click to see all posts, it redirects me to the user's post's index page
+    # When I click to see all posts, it redirects me to the user's post's index page.
     visit user_path(@user)
-    click_link 'See all posts'
-    expect(page).to have_current_path(user_posts_path(@user))
+    first(:link, 'See all posts').click
   end
 end

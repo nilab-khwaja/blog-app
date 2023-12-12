@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.feature 'PostIndices', type: :feature do
   before :each do
     @user = User.create(name: 'Bala', bio: 'Doctor from Turkey',
@@ -12,6 +13,7 @@ RSpec.feature 'PostIndices', type: :feature do
     @comment2 = Comment.create(user_id: @user.id, post_id: @post2.id,
                                text: 'Second comment')
   end
+
   it 'Shows the content of the post#index page' do
     visit user_posts_path(@user)
     # I can see the user's profile picture
