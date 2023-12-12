@@ -10,7 +10,8 @@ RSpec.feature 'UserShows', type: :feature do
     )
     puts @user.errors.full_messages if @user.errors.any?
 
-    @post1 = Post.create(author_id: @user.id, title: 'First Post', text: 'First', comments_counter: 2, likes_counter: 1)
+    @post1 = Post.create(author_id: @user.id, title: 'First Post', text: 'Firrst', comments_counter: 2,
+                         likes_counter: 1)
 
     @post2 = Post.create(author_id: @user.id, title: 'Second Post', text: 'Second', comments_counter: 0,
                          likes_counter: 2)
