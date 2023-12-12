@@ -23,7 +23,7 @@ RSpec.feature 'PostShows', type: :feature do
     # I can see how many comments it has
     expect(page).to have_content("Comments: #{@post.comments_counter}")
     # I can see how many likes it has
-    expect(page).to have_content("Like: #{@post.likes_counter}")
+    expect(page).to have_content("Likes: #{@post.likes_counter}")
     # I can see the post body
     expect(page).to have_content(@post.text)
     within('.list-of-comments') do
