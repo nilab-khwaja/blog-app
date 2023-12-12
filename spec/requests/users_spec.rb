@@ -20,17 +20,17 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /users/:id' do
     it 'return a successful response' do
-      get '/users/95'
+      get '/users/:id'
       expect(response).to have_http_status(200)
     end
 
     it 'renders the index template ' do
-      get '/users/95'
+      get '/users/:id'
       expect(response).to render_template(:show)
     end
 
     it 'includes correct placeholder to the response body' do
-      get '/users/95'
+      get '/users/:id'
       expect(response.body).to include('Show a specific user')
     end
   end
