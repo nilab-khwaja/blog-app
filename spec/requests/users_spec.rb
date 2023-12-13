@@ -19,18 +19,24 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET /users/:id' do
-    it 'return a successful response' do
-      get '/users/10'
+    it 'returns a successful response' do
+      @user = User.create(name: 'Bala', bio: 'Doctor from Turkey',
+                          photo: 'https://img.freepik.com/kitten.jpg', post_counter: 2)
+      get "/users/#{@user.id}"
       expect(response).to have_http_status(200)
     end
 
-    it 'renders the index template ' do
-      get '/users/10'
+    it 'renders the show template' do
+      @user = User.create(name: 'Bala', bio: 'Doctor from Turkey',
+                          photo: 'https://img.freepik.com/kitten.jpg', post_counter: 2)
+      get "/users/#{@user.id}"
       expect(response).to render_template(:show)
     end
 
-    it 'includes correct placeholder to the response body' do
-      get '/users/10'
+    it 'includes correct placeholder in the response body' do
+      @user = User.create(name: 'Bala', bio: 'Doctor from Turkey',
+                          photo: 'https://img.freepik.com/kitten.jpg', post_counter: 2)
+      get "/users/#{@user.id}"
       expect(response.body).to include('Show a specific user')
     end
   end
