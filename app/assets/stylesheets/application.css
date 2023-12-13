@@ -191,6 +191,7 @@ img {
   width: 100%;
   gap: 8px;
 }
+
 .sign_up_container {
   display: flex;
   flex-direction: column;
@@ -199,6 +200,7 @@ img {
   width: 100%;
   gap: 8px;
 }
+
 .new_user {
   width: 55%;
   display: flex;
@@ -207,11 +209,13 @@ img {
   align-items: center;
   gap: 22px;
 }
+
 .field,
 .actions {
   gap: 10px;
   width: 100%;
 }
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -219,12 +223,14 @@ input[type="submit"] {
   width: 100%;
   padding: 8px;
 }
+
 .notice {
   color: green;
   text-align: center;
   font-size: 20px;
   margin-top: 15px;
 }
+
 .alert {
   color: red;
   text-align: center;
