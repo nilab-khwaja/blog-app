@@ -30,7 +30,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find_by(id: params[:id])
-
     if @post
       @post.likes.destroy_all
       if @post.destroy
