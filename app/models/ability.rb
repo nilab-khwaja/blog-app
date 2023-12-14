@@ -7,8 +7,9 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :manage, Post, author_id: user_id
-      can :manage, Comment, user_id:
+      can :manage, Post, author_id: user.id
+      can :manage, Comment, user_id: user.id
+      can :destroy, Post, author_id: user.id, role: 'admin'
     end
   end
 end
