@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  authorize_resource
   def index
     @user = User.includes(:posts).find(params[:user_id])
     @posts = @user.posts
