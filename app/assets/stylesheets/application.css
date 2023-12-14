@@ -10,7 +10,7 @@
   align-items: center;
   width: 100%;
   margin: 60px 0;
-  gap:50px;
+  gap: 50px;
 }
 
 .users-list-container {
@@ -276,8 +276,4 @@ input[type="submit"] {
   border: 1px solid black;
   padding: 6px 14px;
   border-radius: 5px;
-}
-
-post-see-all-btn-container{
-  width:60%
 }
