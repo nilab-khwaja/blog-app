@@ -10,6 +10,7 @@
   align-items: center;
   width: 100%;
   margin: 60px 0;
+  gap: 50px;
 }
 
 .users-list-container {
@@ -114,9 +115,16 @@ img {
   margin: 3px;
 }
 
-.see-all-post-btn {
+.see-all-post-btn,
+.add-new-post-btn {
   margin-top: 20px;
   padding: 8px 12px;
+  background-color: #fff;
+  border: 1px solid black;
+  font-size: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
 }
 
 /* posts#index styles */
@@ -182,14 +190,16 @@ img {
 
 .log_in_container,
 .forget_password_container,
-.change_password_container {
+.change_password_container,
+.new-comment-container,
+.new-like-container,
+.new-post-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 20px;
+  margin-top: 15px;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  gap: 8px;
 }
 
 .sign_up_container {
@@ -236,4 +246,35 @@ input[type="submit"] {
   text-align: center;
   font-size: 20px;
   margin-top: 15px;
+}
+
+.log-out-btn {
+  color: black;
+  text-decoration: none;
+  font-size: 22px;
+  border: 1px solid black;
+  padding: 6px 14px;
+  border-radius: 5px;
+}
+
+.delete-post-btn {
+  padding: 6px 12px;
+}
+
+.comment-like-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.add-comment-btn,
+.add-like-btn {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid black;
+  padding: 6px 14px;
+  border-radius: 5px;
 }

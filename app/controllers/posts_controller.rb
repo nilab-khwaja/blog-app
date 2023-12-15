@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
+  before_action :set_current_user, only: [:create]
+
   def index
     @user = User.includes(:posts).find(params[:user_id])
     @posts = @user.posts
@@ -16,7 +20,7 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    @post = Post.new(post_parameters)
+    @post = Post.new(post_params)
     @post.author_id = @user.id
 
     if @post.save
@@ -28,9 +32,30 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    if @post
+      @post.likes.destroy_all
+      @post.comments.destroy_all
+      if @post.destroy
+        flash[:notice] = 'Post successfully deleted.'
+      else
+        flash[:alert] = 'Failed to delete the post.'
+      end
+    else
+      flash[:alert] = 'Post not found.'
+    end
+
+    redirect_to user_posts_path(id: current_user.id)
+  end
+
   private
 
-  def post_parameters
+  def set_current_user
+    @user = current_user
+  end
+
+  def post_params
     params.require(:post).permit(:title, :text)
   end
 end
